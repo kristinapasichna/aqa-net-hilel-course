@@ -27,4 +27,4 @@ jobs:
     - name: PWInstall
       run: pwsh C:/AQA-course-NET/aqa-net-hilel-course/PlaywrigthUITests/bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Test
-      run: dotnet test PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --filter "Category=UI"
+      run: dotnet test C:/AQA-course-NET/aqa-net-hilel-course/PlaywrigthUITests/bin/Debug/net8.0/PlaywrigthUITests.dll --filter "Category=UI"
