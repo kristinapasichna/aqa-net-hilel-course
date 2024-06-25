@@ -13,7 +13,6 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test, Description("Donwload file verify file updated")]
-        [Category("UI")]
         public async Task VerifyDownload()
         {
             await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
@@ -21,7 +20,6 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test, Description("Donwload file then upload same file")]
-        [Category("UI")]
         public async Task VerifyDownloadDebug()
         {
             await _demoQADownloadPage.GoToDemoQaUploadDownloadPage();
