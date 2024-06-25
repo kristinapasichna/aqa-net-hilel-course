@@ -43,7 +43,6 @@ namespace PlaywrigthUITests.Tests
         //TC-3 : Verify No radio Button disabled and not show text 'You have selected'
         [Test]
         [Description("Verify No radio Button disabled and not show text 'You have selected")]
-        [Category("UI")]
         public async Task VerifyNoRadioButton()
         {
             // Given I go to DemoQa Radio buttons page
@@ -57,7 +56,6 @@ namespace PlaywrigthUITests.Tests
         //TC-4 : Verify H1 Radio Button is visible
         [Test]
         [Description("Verify H1 title Radio Button is visible")]
-        [Category("UI")]
         public async Task VerifyH1RadioButtonVisible()
         {
             // Given I go to DemoQa Radio buttons page
@@ -69,7 +67,6 @@ namespace PlaywrigthUITests.Tests
         //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
         [Test]
         [Description("Verify text 'You have selected Impressive' is not visible after page refresh")]
-        [Category("UI")]
         public async Task VerifyImpressiveTextNotVisibleAfterRefresh()
         {
             // Given I go to DemoQa Radio buttons page

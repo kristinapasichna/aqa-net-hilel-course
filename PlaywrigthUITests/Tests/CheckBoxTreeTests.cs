@@ -33,7 +33,6 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        [Category("UI")]
         public async Task VerifyDocumentsCheckBoxChecked1()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -52,7 +51,6 @@ namespace PlaywrigthUITests.Tests
         //TC4 - Check Descktop Checkbox, verify checked
         [Test]
         [Description("Check Desktop Checkbox, verify checked")]
-        [Category("UI")]
         public async Task VerifyDesktopCheckboxChecked()
         {
             //Given I go to the DemoQa Checkbox page
@@ -68,7 +66,6 @@ namespace PlaywrigthUITests.Tests
         //TC5 - Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked
         [Test]
         [Description("Expand Home > Documents, Check Documents Checkbox. Verify WorkSpace checked")]
-        [Category("UI")]
         public async Task VerifyWorkSpaceCheckboxChecked()
         {
             //Given I go to the DemoQa Checkbox page
@@ -86,7 +83,6 @@ namespace PlaywrigthUITests.Tests
         //TC6 - Check Documents. Verify text 'You have selected : documents workspace react angular veu office public private classified general'
         [Test]
         [Description("Check Documents. Verify text 'You have selected : documents workspace react angular veu office public private classified general'")]
-        [Category("UI")]
         public async Task VerifyDocumentSelectedText()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
@@ -102,7 +98,6 @@ namespace PlaywrigthUITests.Tests
         //TC7 - Expand Home > Documents > WorkSpace, verify React have rct-icon-leaf-close icon
         [Test]
         [Description("Expand Home > Documents > WorkSpace, verify React have rct-icon-leaf-close icon")]
-        [Category("UI")]
         public async Task VerifyReactIcon()
         {
             //Given I go to the DemoQa Checkbox page
@@ -121,7 +116,6 @@ namespace PlaywrigthUITests.Tests
         //TC8 - Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxex checked
         [Test]
         [Description("Check Home, Expand Home, verify Desktop, Documents, Downloads checkboxes checked")]
-        [Category("UI")]
         public async Task VerifyHomeCheckboxChecked()
         {
             //Given I go to the DemoQa Checkbox page
