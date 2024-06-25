@@ -12,7 +12,7 @@ namespace PlaywrigthUITests.Tests
             _demoQACheckBoxPage = new DemoQACheckBoxPage(Page);
         }
 
-        [Test]
+        [Test, Description("Verify Home checkbox can be checked")]
         [Category("UI")]
         public async Task VerifyCheckBoxChecked()
         {
@@ -22,7 +22,6 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
-        [Category("UI")]
         public async Task VerifyDocumentsCheckBoxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();
