@@ -13,6 +13,7 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test, Description("Verify ColorChange button have color black at page init and after 5 sec color red")]
+        [Category("UI")]
         public async Task VerifyDynamicColorChange()
         {
             await _demoQADynamicPropertiesPage.GoToDemoQaDynamicPropertiesPage();
@@ -22,6 +23,7 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
+        [Category("UI")]
         public async Task TestEnableAfter()
         {
             await _demoQADynamicPropertiesPage.GoToDemoQaDynamicPropertiesPage();
@@ -29,6 +31,7 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
+        [Category("UI")]
         public async Task TestVisibleAfter()
         {
             await _demoQADynamicPropertiesPage.GoToDemoQaDynamicPropertiesPage();
@@ -36,6 +39,7 @@ namespace PlaywrigthUITests.Tests
         }
 
         [Test]
+        [Category("UI")]
         public async Task TestVisibleAfterClickWait()
         {
             await _demoQADynamicPropertiesPage.GoToDemoQaDynamicPropertiesPage();

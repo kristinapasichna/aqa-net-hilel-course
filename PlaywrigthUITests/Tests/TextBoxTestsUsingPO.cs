@@ -15,6 +15,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name should be visible")]
+        [Category("UI")]
         public async Task VerifyTextFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();
@@ -27,6 +28,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name Input should be visible")]
+        [Category("UI")]
         public async Task VerifyTextFieldFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();
@@ -39,6 +41,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Enter 'John Doe' in Text Full Name Input, press submit, text Name should be 'Name:John Doe'")]
+        [Category("UI")]
         public async Task VerifyTextSetFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();
@@ -53,6 +56,7 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Clear Text Full Name Input, press submit, text Name should not be visible")]
+        [Category("UI")]
         public async Task VerifyTextClearFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();

@@ -5,6 +5,7 @@ namespace PlaywrigthUITests.Tests
     public class SampleTests : PageTest
     {
         [Test]
+        [Category("UI")]
         public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
         {
             await Page.GotoAsync("https://playwright.dev");

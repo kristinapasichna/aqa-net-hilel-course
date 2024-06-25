@@ -6,7 +6,6 @@ namespace AtataUITests.Tests
     public sealed class ButtonsTests : UITestFixture
     {
         [Test, Description("Verify Click Me button"), Retry(2)]
-        [Category("UI")]
         public void ClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
@@ -22,7 +21,6 @@ namespace AtataUITests.Tests
             DoubleClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
-        [Category("UI")]
         public void DoubleClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
