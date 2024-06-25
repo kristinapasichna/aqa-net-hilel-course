@@ -5,6 +5,8 @@ namespace AtataUITests.Tests
     internal class DynamicPropertiesTests
     {
         [Test]
+        [Description("Verify ColorChange button have color black at page init and after 5 sec color red")]
+        [Category("UI")]
         public void TestChangeColor()
         {
             Go.To<DemoQADynamicPropertiesPage>().
@@ -13,6 +15,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Category("UI")]
         public void TestEnableAfter()
         {
             Go.To<DemoQADynamicPropertiesPage>().
@@ -21,6 +24,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Category("UI")]
         public void TestVisibleAfter()
         {
             Go.To<DemoQADynamicPropertiesPage>().
@@ -29,6 +33,7 @@ namespace AtataUITests.Tests
         }
 
         [Test]
+        [Category("UI")]
         public void TestVisibleAfterClickWait()
         {
             Go.To<DemoQADynamicPropertiesPage>().
