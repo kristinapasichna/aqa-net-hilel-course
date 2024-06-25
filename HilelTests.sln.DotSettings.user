@@ -8,5 +8,8 @@
     &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyH1RadioButtonVisible&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.RadioButtonsTest.VerifyImpressiveTextNotVisibleAfterRefresh&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::7EBE0D15-2330-4BFE-A211-A214557320CE::net8.0::PlaywrigthUITests.Tests.ButtonsTestsrun&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1855E877-3CD1-4C20-9689-7E0543126D6A::net8.0::AtataUITests.Tests.ButtonsTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1855E877-3CD1-4C20-9689-7E0543126D6A::net8.0::AtataUITests.Tests.CheckBoxTreeTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::1855E877-3CD1-4C20-9689-7E0543126D6A::net8.0::AtataUITests.Tests.DownloadUploadTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

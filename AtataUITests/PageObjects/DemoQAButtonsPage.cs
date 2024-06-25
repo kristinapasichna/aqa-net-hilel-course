@@ -8,7 +8,7 @@ namespace AtataUITests.PageObjects
         [FindById("doubleClickBtn")]
         public Button<_> DoubleClickMe { get; private set; }
 
-        [FindById("rightClickBtn")]
+        [FindByXPath("//*[@id=\"rightClickBtn\"]")]
         public Button<_> RigthClickMe { get; private set; }
 
         [ScrollTo]
@@ -17,7 +17,7 @@ namespace AtataUITests.PageObjects
         [FindById("dynamicClickMessage")]
         public Text<_> DinamicClickMessage { get; private set; }
 
-        [FindById("rightClickMessage")]
+        [FindByXPath ("//*[@id=\"rightClickMessage\"]")]
         public Text<_> RightClickMessage { get; private set; }
 
         [FindById("doubleClickMessage")]
