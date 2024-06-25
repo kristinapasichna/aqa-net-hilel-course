@@ -10,6 +10,7 @@ namespace PlaywrigthUITests.Tests
         public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate;
 
         [Test, Description("Verify Click Me button"), Retry(2)]
+        [Category("UI")]
         public async Task ClickButtonTest()
         {
             // Given I go to DemoQa Elements page 
@@ -103,7 +104,6 @@ namespace PlaywrigthUITests.Tests
         }
         //TC-6 : Verify H1 Buttons is visible
         [Test, Description("Verify H1 title 'Buttons' is visible"), Retry(2)]
-        [Category("UI")]
         public async Task H1ButtonsVisibleTest()
         {
             // Given I go to DemoQa Elements page 
