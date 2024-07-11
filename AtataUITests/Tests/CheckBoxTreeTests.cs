@@ -6,7 +6,7 @@ namespace AtataUITests.Tests
     {
         [Test]
         [Description("Verify Home checkbox can be checked")]
-        [Category("UI")]
+        
         public void VerifyCheckBoxTreeeHomeCheckboxVisible()
         {
             Go.To<DemoQACheckBoxPage>().

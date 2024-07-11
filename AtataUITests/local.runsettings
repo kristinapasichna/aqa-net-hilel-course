@@ -3,15 +3,5 @@
   <TestRunParameters>
     <Parameter name="TestEnvironment" value="local" />
     <Parameter name="DriverAlias" value="chrome" />
-    <Parameter name="DriverVersion" value="latest" />
-    <Parameter name="DriverExecutablePath" value="C:\Drivers" />
-    <Parameter name="DriverDownloadCachePath" value="C:\Drivers" />
-    <Parameter name="DriverDownloadTimeout" value="60" />
-    <Parameter name="DriverUpdate" value="true" />
-    <Parameter name="DriverUpdateInterval" value="1" />
-    <Parameter name="DriverUpdateTimeout" value="60" />
-    <Parameter name="DriverOptions" value="headless" />
-    <Parameter name="DriverArguments" value="--no-sandbox --disable-dev-shm-usage" />
-    <Parameter name="DriverServiceArguments" value="--silent" />
   </TestRunParameters>
 </RunSettings>
