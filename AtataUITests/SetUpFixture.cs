@@ -18,7 +18,7 @@
                 .WithArguments("start-maximized")
                 .WithArtifactsAsDownloadDirectory()
                 .UseDriver(driverAlias);
-
+               
             AtataContext.GlobalConfiguration.AutoSetUpDriverToUse();
         }
     }
