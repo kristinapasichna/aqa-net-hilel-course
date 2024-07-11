@@ -6,7 +6,6 @@ namespace AtataUITests.Tests
     {
         [Test]
         [Description("Verify ColorChange button have color black at page init and after 5 sec color red")]
-        [Category("UI")]
         public void TestChangeColor()
         {
             Go.To<DemoQADynamicPropertiesPage>().

@@ -1,12 +1,14 @@
 ﻿using AtataUITests.PageObjects;
+using NUnit.Framework;
 
 namespace AtataUITests.Tests
 {
+    
     internal class RadioButtonTests : UITestFixture
     {
         [Test]
         [Description("Verify Yes radio Button can be checked and display text 'You have selected Yes'")]
-        [Category("UI")]
+        
         public void VerifyYesRadioButtonVisible()
         {
             Go.To<DemoQARadioButtonPage>().
