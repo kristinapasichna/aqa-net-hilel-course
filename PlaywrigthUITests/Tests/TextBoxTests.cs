@@ -30,10 +30,10 @@ namespace PlaywrigthUITests.Tests
             await Page.GetByText("Text Box").IsVisibleAsync();
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
+            // And I see 'Text Box' Page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
             await Page.GetByTitle("Text Box").IsVisibleAsync();
-            var isVisible = await Page.GetByPlaceholder("Full Name").IsVisibleAsync();
-            Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
+            Assert.That(await Page.Locator("//input[@id='userName']").IsVisibleAsync(), "The Full Name input is not visible.");
         }
 
         [Test]
