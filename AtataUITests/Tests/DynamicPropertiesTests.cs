@@ -15,7 +15,6 @@ namespace AtataUITests.Tests
         }
 
         [Test]
-        [Category("UI")]
         public void TestEnableAfter()
         {
             Go.To<DemoQADynamicPropertiesPage>().
@@ -24,7 +23,6 @@ namespace AtataUITests.Tests
         }
 
         [Test]
-        [Category("UI")]
         public void TestVisibleAfter()
         {
             Go.To<DemoQADynamicPropertiesPage>().
@@ -33,7 +31,6 @@ namespace AtataUITests.Tests
         }
 
         [Test]
-        [Category("UI")]
         public void TestVisibleAfterClickWait()
         {
             Go.To<DemoQADynamicPropertiesPage>().

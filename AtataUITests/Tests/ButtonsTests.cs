@@ -38,7 +38,6 @@ namespace AtataUITests.Tests
             DinamicClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Rigth Click Me button"), Retry(2)]
-        [Category("UI")]
         public void RigthClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().

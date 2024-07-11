@@ -19,7 +19,6 @@ namespace AtataUITests.Tests
 
         [Test]
         [Description("Verify Documents checkbox can be checked")]
-        [Category("UI")]
         public void VerifyDocumentsCheckBoxChecked()
         {
             Go.To<DemoQACheckBoxPage>().

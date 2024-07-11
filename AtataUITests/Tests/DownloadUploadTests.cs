@@ -6,7 +6,6 @@ namespace AtataUITests.Tests
     internal class DownloadUploadTests : UITestFixture
     {
         [Test, Description("Donwload file verify file updated")]
-        [Category("UI")]
         public void DownloadTest()
         {
             Go.To<DemoQADownloadUploadPage>().
@@ -16,7 +15,6 @@ namespace AtataUITests.Tests
         }
 
         [Test, Description("Donwload file then upload same file")]
-        [Category("UI")]
         public void UploadTest()
         {
             Go.To<DemoQADownloadUploadPage>().
