@@ -22,7 +22,6 @@ namespace AtataUITests.Tests
             DoubleClickMessage.Should.Not.BeVisible();
 
         [Test, Description("Verify Double Click Me button"), Retry(2)]
-        [Category("UI")]
         public void DoubleClickButtonTest() =>
             // Given I go to DemoQa Elements page 
             Go.To<DemoQAElementsPage>().
