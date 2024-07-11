@@ -6,10 +6,12 @@ namespace PlaywrigthUITests.Tests
     {
         [Test]
         [Description("Text Full Name should be visible")]
+        [Category("UI")]
         public async Task VerifyTextFullName()
         {
             // Given I go to DemoQa Elements Page 
             await Page.GotoAsync("https://demoqa.com/elements");
+            await Page.GetByText("Text Box").IsVisibleAsync();
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
             // And I see 'buttons Page
@@ -25,11 +27,11 @@ namespace PlaywrigthUITests.Tests
         {
             // Given I go to DemoQa Elements Page 
             await Page.GotoAsync("https://demoqa.com/elements");
+            await Page.GetByText("Text Box").IsVisibleAsync();
             // When I Click the Buttons button in menu
             await Page.GetByText("Text Box").ClickAsync();
-            // And I see 'buttons Page
             await Page.WaitForURLAsync("https://demoqa.com/text-box");
-
+            await Page.GetByTitle("Text Box").IsVisibleAsync();
             var isVisible = await Page.GetByPlaceholder("Full Name").IsVisibleAsync();
             Assert.That(isVisible, "The element with text 'You have done a dynamic click' should be visible after clicking the button.");
         }
