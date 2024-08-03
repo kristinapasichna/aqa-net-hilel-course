@@ -56,7 +56,6 @@ namespace Homework
 
         [Test]
         [Description("TC-41 first expect to be Kyiv")]
-        [Category("UI")]
         public void FirstCityTest()
         {
             //TODO: uncomment and fix code below

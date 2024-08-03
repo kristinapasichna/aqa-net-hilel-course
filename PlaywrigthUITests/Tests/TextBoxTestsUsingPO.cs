@@ -15,7 +15,6 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name should be visible")]
-        [Category("UI")]
         public async Task VerifyTextFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();
@@ -28,7 +27,6 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name Input should be visible")]
-        [Category("UI")]
         public async Task VerifyTextFieldFullName()
         {
             await _demoQATextBoxPage.GoToElementsPage();

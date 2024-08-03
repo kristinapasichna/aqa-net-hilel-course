@@ -12,8 +12,7 @@ namespace PlaywrigthUITests.Tests
             _demoQACheckBoxPage = new DemoQACheckBoxPage(Page);
         }
 
-        [Test, Description("Verify Home checkbox can be checked")]
-        [Category("UI")]
+        [Test]
         public async Task VerifyCheckBoxChecked()
         {
             await _demoQACheckBoxPage.GoToDemoQaChecboxPage();

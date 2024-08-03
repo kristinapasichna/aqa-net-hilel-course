@@ -27,7 +27,6 @@ namespace PlaywrigthUITests.Tests
         //TC-2 : Verify Impressive radio Button can be checked and display text 'You have selected Impressive'
         [Test]
         [Description("Verify Impressive radio Button can be checked and display text 'You have selected Impressive'")]
-        [Category("UI")]
         public async Task VerifyImpressiveRadioButton()
         {
             // Given I go to DemoQa Radio buttons page
