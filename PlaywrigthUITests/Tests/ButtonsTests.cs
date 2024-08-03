@@ -10,7 +10,6 @@ namespace PlaywrigthUITests.Tests
         public byte newstring1 = DrivePresetup.InternalClass.InternalAccelerate;
 
         [Test, Description("Verify Click Me button"), Retry(2)]
-        [Category("UI")]
         public async Task ClickButtonTest()
         {
             // Given I go to DemoQa Elements page 

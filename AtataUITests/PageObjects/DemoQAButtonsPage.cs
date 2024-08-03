@@ -5,10 +5,10 @@ namespace AtataUITests.PageObjects
     [Url("/buttons")]
     public sealed class DemoQAButtonsPage : DemoQAPage<_>
     {
-        [FindByXPath("//*[@id=\"doubleClickBtn\"]")]
+        [FindById("doubleClickBtn")]
         public Button<_> DoubleClickMe { get; private set; }
 
-        [FindByXPath("//*[@id=\"rightClickBtn\"]")]
+        [FindById("rightClickBtn")]
         public Button<_> RigthClickMe { get; private set; }
 
         [ScrollTo]
@@ -17,10 +17,13 @@ namespace AtataUITests.PageObjects
         [FindById("dynamicClickMessage")]
         public Text<_> DinamicClickMessage { get; private set; }
 
-        [FindByXPath ("//*[@id=\"rightClickMessage\"]")]
+        [FindById("rightClickMessage")]
         public Text<_> RightClickMessage { get; private set; }
 
-        [FindByXPath("//*[@id=\"doubleClickMessage\"]")]
+        [FindById("doubleClickMessage")]
         public Text<_> DoubleClickMessage { get; private set; }
+
+        [FindByXPath("//h1[@class='text-center' and text()='Buttons']")]
+        public H1<_> ButtonsTitle { get; set; }
     }
 }

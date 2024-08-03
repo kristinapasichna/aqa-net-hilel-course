@@ -5,7 +5,6 @@ namespace AtataUITests.Tests
     internal class DynamicPropertiesTests
     {
         [Test]
-        [Description("Verify ColorChange button have color black at page init and after 5 sec color red")]
         public void TestChangeColor()
         {
             Go.To<DemoQADynamicPropertiesPage>().
