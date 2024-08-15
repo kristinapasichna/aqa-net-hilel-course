@@ -7,7 +7,6 @@ namespace DemoEverShop
         public const string BaseUrl = "https://demo.evershop.io";
         public IPage Page { get; private set; }
         private IBrowser _browser;
-        public IAPIRequestContext ApiContext;
 
         [SetUp]
         public async Task Setup()
@@ -29,13 +28,6 @@ namespace DemoEverShop
 
             Page = await context.NewPageAsync();
             Page.SetDefaultTimeout(10000);
-            ApiContext = await playwrightDriver.APIRequest.NewContextAsync();
-            var headers = new Dictionary<string, string> { { "Accept", "application/json" } };
-            ApiContext = await playwrightDriver.APIRequest.NewContextAsync(new APIRequestNewContextOptions
-            {
-                BaseURL = BaseUrl,
-                ExtraHTTPHeaders = headers,
-            });
         }
         
         [TearDown]

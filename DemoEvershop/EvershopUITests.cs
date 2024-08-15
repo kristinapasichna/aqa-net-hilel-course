@@ -14,7 +14,8 @@ namespace DemoEverShop
         }
         private async Task CustomerUserLogin(string email, string password)
         {
-            
+            if (email == null) throw new ArgumentNullException(nameof(email));
+            if (password == null) throw new ArgumentNullException(nameof(password));
             await Page.APIRequest.PostAsync(BaseUrl + "/customer/login", new()
             {
                 DataObject = new Dictionary<string, object>()

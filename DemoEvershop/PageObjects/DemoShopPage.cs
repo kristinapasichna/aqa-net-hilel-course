@@ -24,9 +24,10 @@ internal class DemoShopPage(IPage page)
     
     public async Task OpenProductDetails(string productName)
     {
+        if(productName == null) throw new ArgumentNullException(nameof(productName));
         await page.Locator($"//a/span[text()='{productName}']").WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible });
         await page.Locator($"//a/span[text()='{productName}']").ClickAsync();
-        await Task.Delay(1500);
+        await page.WaitForLoadStateAsync(LoadState.Load);
     }
     
     private async Task WaitForLoader()
@@ -39,6 +40,7 @@ internal class DemoShopPage(IPage page)
     {
         var colorOption = page.Locator($"//li/a[text()='{color}']");
         var colorSelected = page.Locator($"//li[@class='selected']/a[text()='{color}']");
+        if(color == null) throw new ArgumentNullException(nameof(color));
         await colorOption.ClickAsync();
         await WaitForLoader();
         Assert.That(await colorSelected.IsVisibleAsync(), "Color is not selected");
@@ -48,6 +50,7 @@ internal class DemoShopPage(IPage page)
     {
         var sizeOption = page.Locator($"//li/a[text()='{size}']");
         var sizeSelected = page.Locator($"//li[@class='selected']/a[text()='{size}']");
+        if(size == null) throw new ArgumentNullException(nameof(size));
         await sizeOption.ClickAsync();
         await WaitForLoader();
         Assert.That(await sizeSelected.IsVisibleAsync(), "Size is not selected");
