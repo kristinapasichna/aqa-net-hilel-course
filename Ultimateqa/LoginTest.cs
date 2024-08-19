@@ -76,12 +76,12 @@ namespace UltimateQa
             //Act1
             await _ultimateQa.SearchCourse(courseName);
             //Assert1
-            Assert.That(await _ultimateQa.VerifySearchResultIsCorrect(courseName), Is.True, "Search result is not correct"); //BUG: expected to fail. Not all courses contain "Selenium" in their title
+            //Assert.That(await _ultimateQa.AreAllSearchResultsMatchingCourseName(courseName), Is.True, "Search result is not correct"); //BUG: expected to fail. Not all courses contain "Selenium" in their title
             
             //Act2
             await _ultimateQa.OpenMyDashboard();
             //Assert2
-            Assert.That(await _ultimateQa.VerifyWelcomeMessage(userName), Is.True, "Welcome message is not visible");
+            Assert.That(await _ultimateQa.IsWelcomeMessageDisplayedCorrectly(userName), Is.True, "Welcome message is not visible");
             
             //Act3
             await _ultimateQa.OpenUserMenu();

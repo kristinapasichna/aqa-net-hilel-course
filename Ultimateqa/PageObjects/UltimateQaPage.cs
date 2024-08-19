@@ -28,12 +28,11 @@ public class UltimateQaPage (IPage page)
         await page.WaitForLoadStateAsync();
     }
     
-    public async Task<bool> VerifyWelcomeMessage(string userName)
+    public async Task<bool> IsWelcomeMessageDisplayedCorrectly(string userName)
     {
-        if(userName == null) throw new ArgumentNullException(nameof(userName));
+        if (userName == null) throw new ArgumentNullException(nameof(userName));
         var welcomeBackMessage = await WelcomeBackMessage.InnerTextAsync();
-        bool isVisible = welcomeBackMessage.Contains($"Welcome back, {userName}!");
-        return isVisible;
+        return welcomeBackMessage.Contains($"Welcome back, {userName}!");
     }
     
     public async Task OpenUserMenu()
@@ -51,20 +50,17 @@ public class UltimateQaPage (IPage page)
         Assert.That(await SearchResultFor.InnerTextAsync(), Is.EqualTo(courseName), $"'Search Result for' doesn't contain: {courseName}");
     }
     
-    public async Task<bool> VerifySearchResultIsCorrect(string courseName)
+    public async Task<bool> AreAllSearchResultsMatchingCourseName(string courseName)
     {
-        if(courseName == null) throw new ArgumentNullException(nameof(courseName));
+        if (courseName == null) throw new ArgumentNullException(nameof(courseName));
         var searchResults = await CourseTitle.AllAsync();
-        bool isCourseFound = true;
         foreach (var searchResult in searchResults)
         {
-            var courseTitle = await searchResult.InnerTextAsync();
-            if(!courseTitle.Contains(courseName))
+            if (!(await searchResult.InnerTextAsync()).Contains(courseName))
             {
-                isCourseFound = false;
-                break;
+                return false;
             }
         }
-        return isCourseFound;
+        return true;
     }
 }
