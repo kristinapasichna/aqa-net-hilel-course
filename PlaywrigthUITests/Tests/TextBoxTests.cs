@@ -6,7 +6,6 @@ namespace PlaywrigthUITests.Tests
     {
         [Test]
         [Description("Text Full Name should be visible")]
-        [Category("UI")]
         public async Task VerifyTextFullName()
         {
             // Given I go to DemoQa Elements Page 
@@ -21,7 +20,6 @@ namespace PlaywrigthUITests.Tests
 
         [Test]
         [Description("Text Full Name Input should be visible")]
-        [Category("UI")]
         public async Task VerifyTextFieldFullName()
         {
             // Given I go to DemoQa Elements Page 
