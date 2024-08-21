@@ -29,7 +29,8 @@ namespace PlaywrigthSpecFlow.API.Features.Account
         internal async Task AccountApiCleanup()
         {
             AccountsApi account = new AccountsApi("https://demoqa.com/");
-            await account.DeleteAccountByID(UserId);
+            var token = await account.GenerateToken(MainUser);
+            await account.DeleteAccountById(UserId, token);
         }
         #endregion
         #region HelperMethods
