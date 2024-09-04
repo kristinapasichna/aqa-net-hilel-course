@@ -6,14 +6,14 @@ namespace Automationexercise.PageObjects;
 public class ProductDetailsPage (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
 {
     // Selectors & Locators
-    private ILocator QuantityInput => page.Locator("input#quantity");
-    public ILocator ProductName => page.Locator("//div[@class='product-information']/h2");
-    public ILocator ProductCategory => page.Locator("//div[@class=\"product-information\"]/p[contains(text(),'Category')]");
-    public ILocator ProductPrice => page.Locator("//div[@class=\"product-information\"]/span/span");
-    public ILocator ProductAvailability => page.Locator("//div[@class=\"product-information\"]/p/*[contains(text(),'Availability')]/..");
-    public ILocator ProductCondition => page.Locator("//div[@class=\"product-information\"]/p/*[contains(text(),'Condition:')]/..");
-    public ILocator ProductBrand => page.Locator("//div[@class=\"product-information\"]/p/*[contains(text(),'Brand:')]/..");
-    private ILocator AddToCartButton => page.Locator("button.cart");
+    private ILocator QuantityInput => Page.Locator("input#quantity");
+    public ILocator ProductName => Page.Locator("//div[@class='product-information']/h2");
+    public ILocator ProductCategory => Page.Locator("//div[@class=\"product-information\"]/p[contains(text(),'Category')]");
+    public ILocator ProductPrice => Page.Locator("//div[@class=\"product-information\"]/span/span");
+    public ILocator ProductAvailability => Page.Locator("//div[@class=\"product-information\"]/p/*[contains(text(),'Availability')]/..");
+    public ILocator ProductCondition => Page.Locator("//div[@class=\"product-information\"]/p/*[contains(text(),'Condition:')]/..");
+    public ILocator ProductBrand => Page.Locator("//div[@class=\"product-information\"]/p/*[contains(text(),'Brand:')]/..");
+    private ILocator AddToCartButton => Page.Locator("button.cart");
 
     //Methods
     public async Task SelectQuantity(string quantity)

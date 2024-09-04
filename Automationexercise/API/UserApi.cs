@@ -1,13 +1,12 @@
 using System.Net;
-using Microsoft.Playwright;
+using AutomationExercise.Models;
 
 namespace AutomationExercise.API;
-public class UserApi(IPage page, string baseAddress)
+public class UserApi(string baseAddress)
 {
     private readonly HttpClient _client = new() { BaseAddress = new Uri(baseAddress) };
-    private readonly IPage _page = page;
     
-    public async Task<bool> CreateUserAsync(UiTestFixture.User user)
+    public async Task<bool> CreateUserAsync(User user)
     {
         var formData = new MultipartFormDataContent
         {
@@ -38,17 +37,15 @@ public class UserApi(IPage page, string baseAddress)
         return response.StatusCode == HttpStatusCode.OK;
     }
     
-    public async Task<string> GetUserDetailByEmailAsync(UiTestFixture.User user)
+    public async Task<string> GetUserDetailByEmailAsync(string email)
     {
-        if (string.IsNullOrEmpty(user.Email)) throw new ArgumentException("Email cannot be null or empty", nameof(user.Email));
-        var response = await _client.GetAsync($"api/getUserDetailByEmail?email={user.Email}");
+        if (string.IsNullOrEmpty(email)) throw new ArgumentException("Email cannot be null or empty", nameof(email));
+        var response = await _client.GetAsync($"api/getUserDetailByEmail?email={email}");
         response.EnsureSuccessStatusCode();
-        var content = await response.Content.ReadAsStringAsync();
-        if (content == null) throw new InvalidOperationException("Failed to deserialize the response content into UserDetail");
-        return content;
+        return await response.Content.ReadAsStringAsync();
     }
     
-    public async Task<string> DeleteUserAsync(UiTestFixture.User user)
+    public async Task<string> DeleteUserAsync(User user)
     {
         var formData = new MultipartFormDataContent
         {
@@ -60,9 +57,6 @@ public class UserApi(IPage page, string baseAddress)
                 Content = formData
         };
         var response = await _client.SendAsync(requestMessage);
-        var result = await response.Content.ReadAsStringAsync();
-        return result;
-        //Assert.That(await response.Content.ReadAsStringAsync(), Is.EqualTo("{\"responseCode\": 200, \"message\": \"Account deleted!\"}"), $"Error: {response.StatusCode}");
-        //return response.StatusCode == HttpStatusCode.OK;
+        return await response.Content.ReadAsStringAsync();
     }
 }

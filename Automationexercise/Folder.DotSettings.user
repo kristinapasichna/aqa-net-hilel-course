@@ -1,11 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8a519eca_002D3d33_002D4477_002D8351_002D05ccf8440295/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OpenContactUs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::7D39BC51-B708-85D2-31FE-A41D809C1217::net8.0::Automationexercise.TestsUI.AutomationExerciseTest.VerifyContactUsForm&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::7D39BC51-B708-85D2-31FE-A41D809C1217::net8.0::Automationexercise.TestsUI.AutomationExerciseTest.VerifyAllProductsAndProductDetailPage&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::7D39BC51-B708-85D2-31FE-A41D809C1217::net8.0::Automationexercise.TestsUI.AutomationExerciseTest.SearchProduct&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::7D39BC51-B708-85D2-31FE-A41D809C1217::net8.0::Automationexercise.TestsUI.AutomationExerciseTest.VerifySubscriptionInCartPage&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::7D39BC51-B708-85D2-31FE-A41D809C1217::net8.0::Automationexercise.TestsUI.AutomationExerciseTest.VerifyProductQuantityInCart&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::7D39BC51-B708-85D2-31FE-A41D809C1217::net8.0::Automationexercise.TestsUI.AutomationExerciseTest.PlaceOrderLoginBeforeCheckout&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=50f7a3a4_002D7d3a_002D48a8_002Dbcbe_002D7e6b114c5756/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SearchProduct(&amp;quot;top&amp;quot;)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;And&gt;&#xD;
+    &lt;ProjectFolder&gt;7D39BC51-B708-85D2-31FE-A41D809C1217/d:TestsUI&lt;/ProjectFolder&gt;&#xD;
+    &lt;Project Location="C:\AQA-course-NET\aqa-net-hilel-course\Automationexercise" Presentation="&amp;lt;Automationexercise&amp;gt;" /&gt;&#xD;
+  &lt;/And&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
