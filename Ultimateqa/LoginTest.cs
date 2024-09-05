@@ -49,8 +49,7 @@ namespace UltimateQa
             });
 
             Page = await _context.NewPageAsync();
-
-            await Page.GotoAsync(BaseUrl + "/enrollments");
+            
             if (Page.Url.EndsWith("/users/sign_in"))
             {
                 await Page.WaitForURLAsync(BaseUrl + "/users/sign_in");
