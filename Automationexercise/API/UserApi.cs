@@ -1,32 +1,32 @@
 using System.Net;
-using AutomationExercise.Models;
+using AutomationExercise.TestData;
 
 namespace AutomationExercise.API;
 public class UserApi(string baseAddress)
 {
     private readonly HttpClient _client = new() { BaseAddress = new Uri(baseAddress) };
     
-    public async Task<bool> CreateUserAsync(User user)
+    public async Task<bool> CreateUserAsync(Constants user)
     {
         var formData = new MultipartFormDataContent
         {
-                { new StringContent(user.Name), "name" },
-                { new StringContent(user.Email), "email" },
-                { new StringContent(user.Password), "password" },
-                { new StringContent(user.Title), "title" },
-                { new StringContent(user.BirthDate), "birth_date" },
-                { new StringContent(user.BirthMonth), "birth_month" },
-                { new StringContent(user.BirthYear), "birth_year" },
-                { new StringContent(user.FirstName), "firstname" },
-                { new StringContent(user.LastName), "lastname" },
-                { new StringContent(user.Company), "company" },
-                { new StringContent(user.Address1), "address1" },
-                { new StringContent(user.Address2), "address2" },
-                { new StringContent(user.Country), "country" },
-                { new StringContent(user.Zipcode), "zipcode" },
-                { new StringContent(user.State), "state" },
-                { new StringContent(user.City), "city" },
-                { new StringContent(user.MobileNumber), "mobile_number" }
+                { new StringContent(Constants.Name), "name" },
+                { new StringContent(Constants.Email), "email" },
+                { new StringContent(Constants.Password), "password" },
+                { new StringContent(Constants.Title), "title" },
+                { new StringContent(Constants.BirthDate), "birth_date" },
+                { new StringContent(Constants.BirthMonth), "birth_month" },
+                { new StringContent(Constants.BirthYear), "birth_year" },
+                { new StringContent(Constants.FirstName), "firstname" },
+                { new StringContent(Constants.LastName), "lastname" },
+                { new StringContent(Constants.Company), "company" },
+                { new StringContent(Constants.Address1), "address1" },
+                { new StringContent(Constants.Address2), "address2" },
+                { new StringContent(Constants.Country), "country" },
+                { new StringContent(Constants.Zipcode), "zipcode" },
+                { new StringContent(Constants.State), "state" },
+                { new StringContent(Constants.City), "city" },
+                { new StringContent(Constants.MobileNumber), "mobile_number" }
         }; 
         var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/createAccount")
         {
@@ -45,12 +45,12 @@ public class UserApi(string baseAddress)
         return await response.Content.ReadAsStringAsync();
     }
     
-    public async Task<string> DeleteUserAsync(User user)
+    public async Task<string> DeleteUserAsync(Constants user)
     {
         var formData = new MultipartFormDataContent
         {
-                { new StringContent(user.Email), "email" },
-                { new StringContent(user.Password), "password" }
+                { new StringContent(Constants.Email), "email" },
+                { new StringContent(Constants.Password), "password" }
         };
         var requestMessage = new HttpRequestMessage(HttpMethod.Delete, "api/deleteAccount")
         {

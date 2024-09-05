@@ -1,21 +1,23 @@
 using AutomationExercise;
+using AutomationExercise.TestData;
 using Microsoft.Playwright;
 
 namespace Automationexercise.PageObjects;
 
-public class Cart (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
+public class Cart (IPage page) : BasePage(page)
 {
+    private readonly IPage _page = page;
     //Selectors & Locators
-    public ILocator GoShoppingButton => Page.Locator("#cartModal .btn-success");
-    private ILocator ViewCartLink => Page.Locator("#cartModal [href='/view_cart']");
-    private ILocator ProceedToCheckoutButton => Page.Locator(".btn.check_out");
+    public ILocator GoShoppingButton => _page.Locator("#cartModal .btn-success");
+    private ILocator ViewCartLink => _page.Locator("#cartModal [href='/view_cart']");
+    private ILocator ProceedToCheckoutButton => _page.Locator(".btn.check_out");
 
     //Methods
     public async Task AddToCart(string productName)
     {
         if (productName == null) throw new ArgumentNullException(nameof(productName));
-        var cartButton = Page.Locator($"//div[@class=\"features_items\"]//div[contains(@class,'productinfo ')]/p[contains(text(),'{productName}')]");
-        var addToCartButton = Page.Locator($"//div[@class=\"features_items\"]//div[@class=\"product-overlay\"]//p[contains(text(),'{productName}')]/..//a[contains(@class, 'add-to-cart')]");
+        var cartButton = _page.Locator($"//div[@class='features_items']//div[contains(@class,'productinfo ')]/p[contains(text(),'{productName}')]");
+        var addToCartButton = _page.Locator($"//div[@class='features_items']//div[@class='product-overlay']//p[contains(text(),'{productName}')]/..//a[contains(@class, 'add-to-cart')]");
         await cartButton.ScrollIntoViewIfNeededAsync();
         await cartButton.HoverAsync();
         await addToCartButton.ClickAsync();
@@ -25,19 +27,19 @@ public class Cart (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
     public async Task ClickViewCartButton()
     {
         await ViewCartLink.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl + "/view_cart");
+        await _page.WaitForURLAsync(Constants.BaseUrl + "/view_cart");
     }  
     
     public async Task<bool> IsCartPageVisible()
     {
-        await Page.WaitForURLAsync(BaseUrl + "/view_cart");
-        return await Page.Locator("#cart_info").IsVisibleAsync();
+        await _page.WaitForURLAsync(Constants.BaseUrl + "/view_cart");
+        return await _page.Locator("#cart_info").IsVisibleAsync();
     }
     
     public async Task<string> GetProductQuantity(string productName)
     {
         if (productName == null) throw new ArgumentNullException(nameof(productName));
-        var products = await Page.Locator("//tr[contains(@id, 'product')]").AllAsync();
+        var products = await _page.Locator("//tr[contains(@id, 'product')]").AllAsync();
         if (products == null || products.Count == 0) throw new InvalidOperationException("Product list is not visible");
         foreach (var product in products)
         {
@@ -52,6 +54,6 @@ public class Cart (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
     public async Task ClickProceedToCheckoutButton()
     {
         await ProceedToCheckoutButton.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl + "/checkout");
+        await _page.WaitForURLAsync(Constants.BaseUrl + "/checkout");
     }
 }

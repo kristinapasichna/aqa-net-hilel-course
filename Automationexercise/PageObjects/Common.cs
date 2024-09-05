@@ -1,48 +1,51 @@
 using AutomationExercise;
+using AutomationExercise.TestData;
 using Microsoft.Playwright;
 
 namespace Automationexercise.PageObjects;
 
-public class Common (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
+public class Common(IPage page) : BasePage(page)
 {
+    private readonly IPage _page = page;
+
     //Selectors & Locators
     /* Header menu */
-    private ILocator ContactUsButton => Page.Locator("[href='/contact_us']");
-    private ILocator ProductMenuButton => Page.Locator("[href='/products']");
-    private ILocator CartMenuButton => Page.Locator(".nav [href='/view_cart']");
-    private ILocator DeleteAccountButton => Page.Locator("[href='/delete_account']");
-    public ILocator HomePageTitle => Page.Locator("//h2[contains(text(), 'Features Items')]");
-    private ILocator HomeButton => Page.Locator(".btn-success");
+    private ILocator ContactUsButton => _page.Locator("[href='/contact_us']");
+    private ILocator ProductMenuButton => _page.Locator("[href='/products']");
+    private ILocator CartMenuButton => _page.Locator(".nav [href='/view_cart']");
+    public ILocator HomePageTitle => _page.Locator("//h2[contains(text(), 'Features Items')]");
+    private ILocator HomeButton => _page.Locator(".btn-success");
     /* footer */
-    private ILocator Footer => Page.Locator("#footer");
-    public ILocator SubscriptionTitle => Page.Locator("//div/h2[text()= 'Subscription']");
-    private ILocator SubscribeEmailInput => Page.Locator("#susbscribe_email");
-    private ILocator SubscribeButton => Page.Locator("button#subscribe");
-    public ILocator SubscribeSuccessMessage => Page.Locator("#success-subscribe");
+    private ILocator Footer => _page.Locator("#footer");
+    public ILocator SubscriptionTitle => _page.Locator("//div/h2[text()= 'Subscription']");
+    private ILocator SubscribeEmailInput => _page.Locator("#susbscribe_email");
+    private ILocator SubscribeButton => _page.Locator("button#subscribe");
+    public ILocator SubscribeSuccessMessage => _page.Locator("#success-subscribe");
     
     //Methods
-    public async Task ClickContactUsButton()
+    public async Task OpenContactUsPage()
     {
         await ContactUsButton.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl +"/contact_us");
+        await _page.WaitForURLAsync(Constants.BaseUrl +"/contact_us");
+        await _page.GetByText("Get In Touch").WaitForAsync();
     }
     
-    public async Task ClickHomeButton()
+    public async Task OpenHomePage()
     {
         await HomeButton.ClickAsync();
-        await Page.Locator(".features_items").ClickAsync();
+        await _page.Locator(".features_items").ClickAsync();
     }
     
-    public async Task ClickProductsButton()
+    public async Task OpenProductsPage()
     {
         await ProductMenuButton.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl + "/products");
+        await _page.WaitForURLAsync(Constants.BaseUrl + "/products");
     }
     
-    public async Task ClickCartButton()
+    public async Task OpenCartPage()
     {
         await CartMenuButton.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl + "/view_cart");
+        await _page.WaitForURLAsync(Constants.BaseUrl + "/view_cart");
     }
     
     public async Task ScrollToFooter()
@@ -60,11 +63,5 @@ public class Common (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
     public async Task ClickSubscriptionArrowButton()
     {
         await SubscribeButton.ClickAsync();
-    }
-    
-    public async Task ClickDeleteAccountButton()
-    {
-        await DeleteAccountButton.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl + "/delete_account");
     }
 }

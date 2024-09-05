@@ -1,31 +1,33 @@
 using AutomationExercise;
-using AutomationExercise.Models;
+using AutomationExercise.TestData;
 using Microsoft.Playwright;
 
 namespace Automationexercise.PageObjects;
 
-public class CheckoutPage (IPage page, string baseUrl) : BasePage(page: page, baseUrl)
+public class CheckoutPage (IPage page) : BasePage(page)
 {
+    private readonly IPage _page = page;
+    
     //Selectors & Locators
-    private ILocator OrderComment => Page.Locator("[name='message']");
-    private ILocator PlaceOrderButton => Page.Locator(".btn[href='/payment']");
+    private ILocator OrderComment => _page.Locator("[name='message']");
+    private ILocator PlaceOrderButton => _page.Locator(".btn[href='/payment']");
     
     //Methods
-    public async Task<bool> IsAddressDetailsVisible(object user) 
+    public async Task<bool> IsAddressDetailsVisible(Constants user) 
     {
         if (user == null) throw new ArgumentNullException(nameof(user));    
         
-        var deliveryAddress = await Page.Locator("//ul[@id=\"address_delivery\"]/li").AllAsync();
+        var deliveryAddress = await _page.Locator("//ul[@id='address_delivery']/li").AllAsync();
         if (deliveryAddress == null) throw new InvalidOperationException("Address details are not visible");
         var userDetails = new List<string>
         {
-            $"{((User)user).Title} {((User)user).FirstName} {((User)user).LastName}",
-            ((User)user).Company,
-            ((User)user).Address1,
-            ((User)user).Address2,
-            $"{((User)user).City}, {((User)user).State} {((User)user).Zipcode}",
-            ((User)user).Country,
-            ((User)user).MobileNumber
+            $"{Constants.Title} {Constants.FirstName} {Constants.LastName}",
+            Constants.Company,
+            Constants.Address1,
+            Constants.Address2,
+            $"{Constants.City}, {Constants.State} {Constants.Zipcode}",
+            Constants.Country,
+            Constants.MobileNumber
         };
 
         foreach (var deliveryAddressLine in deliveryAddress)
@@ -42,7 +44,7 @@ public class CheckoutPage (IPage page, string baseUrl) : BasePage(page: page, ba
     public async Task<bool> IsReviewYourOrderVisible(string productName, string quantity)
     {
         if (productName == null) throw new ArgumentNullException(nameof(productName));
-        var product = await Page.Locator($"//tr[contains(@id, 'product')]").AllAsync();
+        var product = await _page.Locator($"//tr[contains(@id, 'product')]").AllAsync();
         if (product == null) throw new InvalidOperationException("Product list is not visible");
         var result = false;
         foreach (var item in product)
@@ -67,6 +69,6 @@ public class CheckoutPage (IPage page, string baseUrl) : BasePage(page: page, ba
     public async Task ClickPlaceOrderButton()
     {
         await PlaceOrderButton.ClickAsync();
-        await Page.WaitForURLAsync(BaseUrl + "/payment");
+        await _page.WaitForURLAsync(Constants.BaseUrl + "/payment");
     }
 }
